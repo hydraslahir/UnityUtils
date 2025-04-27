@@ -7,15 +7,6 @@ using static HYDRA.EditorUtils;
 
 namespace HYDRA
 {
-    /// <summary>
-    /// Takes up to 4 maps, reads a <see cref="Mapping"/> Channel and writes it to an output.
-    /// Allows to create MaskMaps <see cref="https://docs.unity3d.com/Packages/com.unity.render-pipelines.high-definition@13.1/manual/Mask-Map-and-Detail-Map.html"/>
-    /// 
-    /// R : Metallic
-    /// G : AO
-    /// B : Detail
-    /// A : Smoothness
-    /// </summary>
     public class ChannelMerger : EditorWindow
     {
         [MenuItem("Utils/ChannelMerger")]
