@@ -10,11 +10,14 @@ namespace HYDRA
     public class ChannelMerger : EditorWindow
     {
         [MenuItem("Utils/ChannelMerger")]
-        public static void ShowExample()
+        public static void CreateChannelMerger()
         {
             ChannelMerger wnd = GetWindow<ChannelMerger>();
             wnd.titleContent = new GUIContent("ChannelMerger");
         }
+
+        // Force to redraw 10 times per second, instead of whenever unity considers it to be required.
+        public void OnInspectorUpdate() => Repaint();
 
         TextureData red;
         public TextureData Red
