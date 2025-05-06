@@ -7,12 +7,13 @@ namespace HYDRA
 {
     public static class ListExtensions
     {
-        public static T MinBy<T>(this List<T> elements, Func<T, float> FN, [CallerMemberName] string caller = null)
+        public static T MinBy<T>(this IEnumerable<T> elements, Func<T, float> FN, [CallerMemberName] string caller = null)
         {
             if (elements == null || !elements.Any())
-                throw new PreconditionException($"{nameof(elements)} is empty or null \n {caller} -> {nameof(MinBy)}");
+                return default;
 
-            var min = (elements[0], FN(elements[0]));
+            var first = elements.First();
+            var min = (first, FN(first));
 
             foreach (var element in elements)
             {
