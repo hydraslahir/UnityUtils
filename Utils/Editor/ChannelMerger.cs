@@ -63,6 +63,14 @@ namespace HYDRA
         {
             GUILayout.Label("Channel Merger");
 
+            GUILayout.Label("Unity mapping:");
+            Indent(() =>
+            {
+                GUILayout.Label("Red : Metallic");
+                GUILayout.Label("Green : Ambient Occlusion");
+                GUILayout.Label("Blue : Detail");
+                GUILayout.Label("Alpha : Smoothness");
+            });
             DrawTextureField("Red", Red);
             DrawTextureField("Green", Green);
             DrawTextureField("Blue", Blue);
