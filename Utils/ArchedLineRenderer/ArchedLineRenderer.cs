@@ -14,11 +14,6 @@ public class ArchedLineRenderer : MonoBehaviour
         LineRenderer.shadowCastingMode = ShadowCastingMode.Off;
     }
 
-    public void SetColor(Color color)
-    {
-        LineRenderer.material.color = color;
-    }
-
     public GameObject Origin;
     public GameObject Destination;
 
@@ -26,6 +21,8 @@ public class ArchedLineRenderer : MonoBehaviour
     public int Resolution = 10;
     [SerializeField]
     public float Width = 0.1f;
+    [SerializeField]
+    public Color LineColor;
 
     void Update()
     {
@@ -34,6 +31,7 @@ public class ArchedLineRenderer : MonoBehaviour
         if (!valid)
             return;
 
+        LineRenderer.material.color = LineColor;
         LineRenderer.positionCount = Resolution + 1;
         LineRenderer.startWidth = Width;
         LineRenderer.endWidth = Width;
